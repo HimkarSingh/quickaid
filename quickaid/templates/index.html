@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickAid - AI First Aid Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🏥 QuickAid</h1>
+            <p>AI-Powered First Aid Assistant</p>
+            <p class="phase-info">Phase 2: Core Flask Application</p>
+        </header>
+        
+        <main class="main-content">
+            <!-- Option Cards -->
+            <div class="option-card" onclick="showImageUpload()">
+                <h3>📷 Analyze Injury Photo</h3>
+                <p>Upload a photo of the injury for AI analysis</p>
+            </div>
+            
+            <div class="option-card" onclick="showSymptomsInput()">
+                <h3>💭 Describe Symptoms</h3>
+                <p>Tell us what happened or describe symptoms</p>
+            </div>
+            
+            <!-- Image Upload Section -->
+            <div id="image-section" class="section" style="display: none;">
+                <h3>Upload Injury Photo</h3>
+                <div class="upload-area">
+                    <p>📸 Choose an image file</p>
+                    <input type="file" id="image-input" accept="image/*">
+                    <button class="btn primary" onclick="analyzeImage()">Analyze Image</button>
+                </div>
+            </div>
+            
+            <!-- Symptoms Input Section -->
+            <div id="symptoms-section" class="section" style="display: none;">
+                <h3>Describe the Situation</h3>
+                <textarea id="symptoms-text" placeholder="Describe what happened, symptoms, or the emergency situation..."></textarea>
+                <button class="btn primary" onclick="analyzeSymptoms()">Analyze Symptoms</button>
+            </div>
+            
+            <!-- Results Section -->
+            <div id="results" class="results" style="display: none;">
+                <h3>Analysis Results</h3>
+                <div id="results-content"></div>
+            </div>
+            
+            <!-- Loading Section -->
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Processing...</p>
+            </div>
+            
+            <!-- API Testing Section -->
+            <div class="api-test">
+                <h3>🧪 Test API Endpoints</h3>
+                <div class="test-buttons">
+                    <button class="btn secondary" onclick="testEmergencyContacts()">Test Emergency Contacts</button>
+                    <button class="btn secondary" onclick="testFirstAidGuide()">Test First Aid Guide</button>
+                    <button class="btn secondary" onclick="testHealth()">Test Health Check</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Emergency Button -->
+    <button class="emergency-btn" onclick="callEmergency()">🚨 CALL 911</button>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
