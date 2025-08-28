@@ -44,7 +44,7 @@ quickaid/
 2. **Create a virtual environment:**
 	```bash
 	python3 -m venv quickaid_env
-	source quickaid_env/bin/activate
+	source quickaid_env/bin/activate  (// use script/ instead of bin for windows users)
 	```
 3. **Install dependencies:**
 	```bash
