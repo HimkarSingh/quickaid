@@ -17,8 +17,8 @@ quickaid/
 ├── app.py                # Main Flask application
 ├── requirements.txt      # Python dependencies
 ├── static/               # Static files (CSS, JS, images)
-│   ├── css/
-│   ├── js/
+│   ├── css/              # Two files (varients)
+│   ├── js/               # Two files (varients)
 │   └── images/
 ├── templates/            # HTML templates
 │   └── index.html
